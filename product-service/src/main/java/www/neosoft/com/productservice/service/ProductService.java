@@ -6,6 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,12 @@ public class ProductService {
 	@Autowired
 	private ProductMongoRepository productMongoRepository;
 	private List<Product> products = new ArrayList<>();
+    
+	
+	@PostConstruct
+	public void loadAllProdects() {
+		
+	}
 
 	public String addProduct(Product product) {
 		// TODO Auto-generated method stub
